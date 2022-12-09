@@ -1,0 +1,26 @@
+<h3>Cadastro de Novos Funcionarios</h3>
+
+<nav style=>
+    <label for="name">Name do Setor:</label>
+    <input [(ngModel)]="setor.nameSector" id="name">
+    <br />
+    <br />
+    <label for="email">Quantidade de Mesas:</label>
+    <input [(ngModel)]="setor.tableQuantity" id="email">
+    <br />
+    <br />
+    <label for="password">Empresa Cadastrada:</label>
+    <input [(ngModel)]="setor.company" id="password">
+    <br />
+    <!-- <br />
+    <label for="SectorId">Setor:</label>
+    <input [(ngModel)]="setor.SectorId" id="SectorId">
+    <br /> -->
+    <br />
+
+    <button (click)="salvar()">{{botaoAcao}}</button>
+    <button (click)="cancelar()">Cancelar</button>
+
+    <h4>{{mensagem}}</h4>
+    <br />
+</nav>

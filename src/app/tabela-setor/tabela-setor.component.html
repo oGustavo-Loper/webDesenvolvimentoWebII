@@ -1,0 +1,23 @@
+<h3>{{titulo}}</h3>
+<label>Pesquisar: </label>
+<!-- <input type="text" [(ngModel)]="namePesquisado"> -->
+<br />
+<table *ngIf="lista.length > 0">
+    <tr>
+        <th>Id Setor</th>
+        <th>Setor</th>
+        <th>Quantidade Mesas</th>
+        <th>Empresa</th>
+        <th>Ação</th>
+    </tr>
+    <tr *ngFor="let Sector of lista">
+        <td>{{Sector._id}}</td>
+        <td>{{Sector.nameSector}}</td>
+        <td>{{Sector.tableQuantity}}</td>
+        <td>{{Sector.company}}</td>
+        <td><a routerLink="/edit2/{{Sector._id}}">Editar</a></td>
+        <td><a routerLink="/tabela" (click)="deletar(Sector._id)">Deletar</a></td>
+    </tr>
+</table>
+<!-- <p *ngIf="lista.length <= 0"> NÃO HÁ PRODUTOS CADASTRADOS! </p> -->
+<tr *ngFor="let Sector of lista">

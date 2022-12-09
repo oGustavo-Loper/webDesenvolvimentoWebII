@@ -1,0 +1,23 @@
+<h3>{{titulo}}</h3>
+<label>Pesquisar: </label>
+<input type="text" [(ngModel)]="namePesquisado">
+<br />
+<table *ngIf="lista.length > 0">
+    <tr>
+        <th>Id Funcionario</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Nome do Cracha</th>
+        <th>Setor ID</th>
+    </tr>
+    <tr *ngFor="let prod of lista | filtroPesquisa:namePesquisado">
+        <td>{{prod._id}}</td>
+        <td>{{prod.name}}</td>
+        <td>{{prod.email}}</td>
+        <td>{{prod.password}}</td>
+        <td>{{prod.SectorId}}</td>
+        <td><a routerLink="/edit2/{{prod._id}}">Editar</a></td>
+        <td><a routerLink="/tabela" (click)="deletar(prod._id)">Deletar</a></td>
+    </tr>
+</table>
+<p *ngIf="lista.length <= 0"> NÃO HÁ PRODUTOS CADASTRADOS! </p>
